@@ -1,0 +1,48 @@
+@(projects: List[Project], user: User, buttonSwitchForm: Form[ButtonSwitch])
+
+@import helper._
+
+@implicitFieldConstructor = @{ FieldConstructor(twitterBootstrapInput.render) } 
+
+@main(projects, user) {
+    
+    <h1>Add a Button Switch</h1>
+    
+    @form(routes.ButtonSwitchs.save()) {
+        
+        <fieldset>
+        
+            @inputText(buttonSwitchForm("mfg1Part"), '_label -> "Mfg1 Part")
+            @inputText(buttonSwitchForm("category"), '_label -> "Category")
+            @inputText(buttonSwitchForm("prefix"), '_label -> "Prefix")
+            @inputText(buttonSwitchForm("partType"), '_label -> "Part Type")
+            @inputText(buttonSwitchForm("description"), '_label -> "Description")
+            @inputText(buttonSwitchForm("device"), '_label -> "Device")
+            @inputText(buttonSwitchForm("mfg1"), '_label -> "Mfg1")
+            @inputText(buttonSwitchForm("distr1"), '_label -> "Distr1")
+            @inputText(buttonSwitchForm("distr1Part"), '_label -> "Distr1 Part")
+            @inputText(buttonSwitchForm("value"), '_label -> "Value")
+            @inputText(buttonSwitchForm("package_"), '_label -> "Package")
+            @inputText(buttonSwitchForm("voltage"), '_label -> "Voltage")
+            @inputText(buttonSwitchForm("current"), '_label -> "Current")
+            @inputText(buttonSwitchForm("pcbFootprint"), '_label -> "Pcb Footprint")
+            @inputText(buttonSwitchForm("name"), '_label -> "Name")
+            @inputText(buttonSwitchForm("niMark"), '_label -> "NiMark")
+            @inputText(buttonSwitchForm("type"), '_label -> "Type")
+            @inputText(buttonSwitchForm("subtype"), '_label -> "Subtype")
+            @inputText(buttonSwitchForm("noOfPins"), '_label -> "No Of Pins")
+            @inputText(buttonSwitchForm("accountId"), '_label -> "Account ID")
+            @inputText(buttonSwitchForm("modifiedDate"), '_label -> "Modified Date")
+            @inputText(buttonSwitchForm("schematicPart"), '_label -> "Schematic Part")
+            @inputText(buttonSwitchForm("status"), '_label -> "Status")
+
+        </fieldset>
+        
+        <div class="actions">
+            <input type="submit" value="Create this button switch" class="btn primary"> or 
+            <a href="@routes.ButtonSwitchs.list()" class="btn">Cancel</a> 
+        </div>
+        
+    }
+    
+}
