@@ -1,0 +1,20 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/target/scala-2.10/resource_managed/main/public/stylesheets/login.css,/home/tannb/git/zentasks/target/scala-2.10/classes/public/stylesheets/login.css)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/target/scala-2.10/resource_managed/main/public/stylesheets/login.min.css,/home/tannb/git/zentasks/target/scala-2.10/classes/public/stylesheets/login.min.css)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/target/scala-2.10/resource_managed/main/public/stylesheets/main.min.css,/home/tannb/git/zentasks/target/scala-2.10/classes/public/stylesheets/main.min.css)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/target/scala-2.10/resource_managed/main/public/stylesheets/main.css,/home/tannb/git/zentasks/target/scala-2.10/classes/public/stylesheets/main.css)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/target/scala-2.10/resource_managed/main/public/javascripts/main.js,/home/tannb/git/zentasks/target/scala-2.10/classes/public/javascripts/main.js)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/target/scala-2.10/resource_managed/main/public/javascripts/main.min.js,/home/tannb/git/zentasks/target/scala-2.10/classes/public/javascripts/main.min.js)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/messages,/home/tannb/git/zentasks/target/scala-2.10/classes/messages)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/routes,/home/tannb/git/zentasks/target/scala-2.10/classes/routes)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/initial-data.yml,/home/tannb/git/zentasks/target/scala-2.10/classes/initial-data.yml)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/application.conf,/home/tannb/git/zentasks/target/scala-2.10/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions/default,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions/default)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions/script,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions/script)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions/default/2.sql,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions/default/2.sql)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions/default/1.sql,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions/default/1.sql)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions/default/3.sql,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions/default/3.sql)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions/script/insert-computer.sql,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions/script/insert-computer.sql)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions/script/insert-part-type.sql,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions/script/insert-part-type.sql)[0m
+[0m[[0mdebug[0m] [0m	(/home/tannb/git/zentasks/conf/evolutions/script/insert-hwdb.sql,/home/tannb/git/zentasks/target/scala-2.10/classes/evolutions/script/insert-hwdb.sql)[0m
