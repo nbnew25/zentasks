@@ -18,8 +18,12 @@ public class Application extends Controller {
         public String password;
         
         public String validate() {
-            if(User.authenticate(email, password) == null) {
+        	User user = User.authenticate(email, password);
+            if(user == null) {
                 return "Invalid user or password";
+            }
+            else{
+            	session("userId", ""+user.id);
             }
             return null;
         }

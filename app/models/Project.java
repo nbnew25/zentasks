@@ -1,44 +1,28 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import javax.persistence.*;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import play.db.ebean.*;
 
-import play.db.ebean.Model;
-
-import com.avaje.ebean.Ebean;
+import com.avaje.ebean.*;
 
 /**
  * Project entity managed by Ebean
  */
-@Entity
-@Table(name="project")
+@Entity 
 public class Project extends Model {
 
     private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name = "id")
     public Long id;
     
-	@Column(name = "name")
     public String name;
     
-	@Column(name = "folder")
     public String folder;
     
     @ManyToMany
-    @JoinTable(name="project_account",
-    		  joinColumns=@JoinColumn(name="project_id",referencedColumnName="id"),
-    	      inverseJoinColumns=@JoinColumn(name="account_email",referencedColumnName="email"))
     public List<User> members = new ArrayList<User>();
     
     public Project(String name, String folder, User owner) {
@@ -54,9 +38,9 @@ public class Project extends Model {
     /**
      * Retrieve project for user
      */
-    public static List<Project> findInvolving(String user) {
+    public static List<Project> findInvolving(Long user) {
         return find.where()
-            .eq("members.email", user)
+            .eq("members.id", user)
             .findList();
     }
     
@@ -72,8 +56,8 @@ public class Project extends Model {
     /**
      * Create a new project.
      */
-    public static Project create(String name, String folder, String owner) {
-        Project project = new Project(name, folder, User.findByEmail(owner));
+    public static Project create(String name, String folder, Long owner) {
+        Project project = new Project(name, folder, User.find.ref(owner));
         project.save();
         project.saveManyToManyAssociations("members");
         return project;
@@ -102,10 +86,10 @@ public class Project extends Model {
     /**
      * Add a member to this project
      */
-    public static void addMember(Long project, String user) {
-        Project p = Project.find.setId(project).fetch("members", "email").findUnique();
+    public static void addMember(Long project, Long user) {
+        Project p = Project.find.setId(project).fetch("members", "id").findUnique();
         p.members.add(
-            User.findByEmail(user)
+            User.find.ref(user)
         );
         p.saveManyToManyAssociations("members");
     }
@@ -113,10 +97,10 @@ public class Project extends Model {
     /**
      * Remove a member from this project
      */
-    public static void removeMember(Long project, String user) {
-        Project p = Project.find.setId(project).fetch("members", "email").findUnique();
+    public static void removeMember(Long project, Long user) {
+        Project p = Project.find.setId(project).fetch("members", "id").findUnique();
         p.members.remove(
-            User.findByEmail(user)
+            User.find.ref(user)
         );
         p.saveManyToManyAssociations("members");
     }
@@ -124,9 +108,9 @@ public class Project extends Model {
     /**
      * Check if a user is a member of this project
      */
-    public static boolean isMember(Long project, String user) {
+    public static boolean isMember(Long project, Long user) {
         return find.where()
-            .eq("members.email", user)
+            .eq("members.id", user)
             .eq("id", project)
             .findRowCount() > 0;
     } 

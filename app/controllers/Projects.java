@@ -6,7 +6,6 @@ import static play.data.Form.*;
 import java.util.*;
 
 import models.*;
-
 import views.html.*;
 import views.html.projects.*;
 
@@ -22,9 +21,9 @@ public class Projects extends Controller {
     public static Result index() {
         return ok(
             dashboard.render(
-                Project.findInvolving(request().username()),
-                Task.findTodoInvolving(request().username()),
-                User.findByEmail(request().username())
+                Project.findInvolving(Secured.getUserId()),
+                Task.findTodoInvolving(Secured.getUserId()),
+                User.find.byId(Secured.getUserId())
             )
         );
     }
@@ -38,7 +37,7 @@ public class Projects extends Controller {
         Project newProject = Project.create(
             "New project", 
             form().bindFromRequest().get("group"),
-            request().username()
+            Secured.getUserId()
         );
         return ok(item.render(newProject));
     }
@@ -108,7 +107,7 @@ public class Projects extends Controller {
         if(Secured.isMemberOf(project)) {
             Project.addMember(
                 project,
-                form().bindFromRequest().get("user")
+                Long.parseLong(form().bindFromRequest().get("user"))
             );
             return ok();
         } else {
@@ -123,7 +122,7 @@ public class Projects extends Controller {
         if(Secured.isMemberOf(project)) {
             Project.removeMember(
                 project,
-                form().bindFromRequest().get("user")
+                Long.parseLong(form().bindFromRequest().get("user"))
             );
             return ok();
         } else {

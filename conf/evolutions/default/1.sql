@@ -22,20 +22,20 @@ create table task (
   title                     varchar(255),
   done                      boolean,
   due_date                  timestamp,
-  assigned_to_email         varchar(255),
+  assigned_to_id            bigint,
   folder                    varchar(255),
   project_id                bigint,
   constraint pk_task primary key (id),
-  foreign key (assigned_to_email) references account (email) on delete set null on update restrict,
+  foreign key (assigned_to_id) references account (id) on delete set null on update restrict,
   foreign key (project_id) references project (id) on delete cascade on update restrict
 );
 
 create table project_account (
   project_id                     bigint not null,
-  account_email                     varchar(255) not null,
-  constraint pk_project_account primary key (project_id, account_email),
+  account_id                     bigint not null,
+  constraint pk_project_account primary key (project_id, account_id),
   foreign key (project_id) references project (id) on delete cascade on update restrict,
-  foreign key (account_email) references account (email) on delete cascade on update restrict
+  foreign key (account_id) references account (id) on delete cascade on update restrict
 );
 
 

@@ -1,7 +1,6 @@
 package models;
 
 import java.util.*;
-
 import javax.persistence.*;
 
 import play.db.ebean.*;
@@ -14,7 +13,6 @@ import com.avaje.ebean.*;
  * Task entity managed by Ebean
  */
 @Entity 
-@Table(name="task")
 public class Task extends Model {
 
     private static final long serialVersionUID = 1L;
@@ -31,7 +29,6 @@ public class Task extends Model {
     public Date dueDate;
     
     @ManyToOne
-    @JoinColumn(name="assigned_to_email",referencedColumnName="email")
     public User assignedTo;
     
     public String folder;
@@ -46,11 +43,11 @@ public class Task extends Model {
     /**
      * Retrieve todo tasks for the user.
      */
-    public static List<Task> findTodoInvolving(String user) {
+    public static List<Task> findTodoInvolving(Long user) {
        return find.fetch("project")
            .where()
                 .eq("done", false)
-                .eq("project.members.email", user)
+                .eq("project.members.id", user)
            .findList();
     }
     
@@ -109,9 +106,9 @@ public class Task extends Model {
     /**
      * Check if a user is the owner of this task
      */
-    public static boolean isOwner(Long task, String user) {
+    public static boolean isOwner(Long task, Long user) {
         return find.where()
-            .eq("project.members.email", user)
+            .eq("project.members.id", user)
             .eq("id", task)
             .findRowCount() > 0;
     }

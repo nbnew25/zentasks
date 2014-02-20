@@ -23,8 +23,8 @@ public class ButtonSwitchs extends Controller{
     public static Result list(int page, String sortBy, String order, String filter) {
         return ok(
             list.render(
-            	Project.findInvolving(request().username()),
-            	User.findByEmail(request().username()),
+            	Project.findInvolving(Secured.getUserId()),
+            	User.find.byId(Secured.getUserId()),
                 ButtonSwitch.page(page, 10, sortBy, order, filter),
                 sortBy, order, filter
             )
@@ -37,8 +37,8 @@ public class ButtonSwitchs extends Controller{
         );
         return ok(
             editForm.render(
-            		Project.findInvolving(request().username()),
-                	User.findByEmail(request().username()),
+            		Project.findInvolving(Secured.getUserId()),
+                	User.find.byId(Secured.getUserId()),
             		id, 
             		buttonSwitchForm)
         );
@@ -48,8 +48,8 @@ public class ButtonSwitchs extends Controller{
         Form<ButtonSwitch> buttonSwitchForm = form(ButtonSwitch.class).bindFromRequest();
         if(buttonSwitchForm.hasErrors()) {
             return badRequest(editForm.render(
-            		Project.findInvolving(request().username()),
-                	User.findByEmail(request().username()),
+            		Project.findInvolving(Secured.getUserId()),
+                	User.find.byId(Secured.getUserId()),
             		id, 
             		buttonSwitchForm));
         }
@@ -62,8 +62,8 @@ public class ButtonSwitchs extends Controller{
         Form<ButtonSwitch> buttonSwitchForm = form(ButtonSwitch.class);
         return ok(
             createForm.render(
-            		Project.findInvolving(request().username()),
-                	User.findByEmail(request().username()),
+            		Project.findInvolving(Secured.getUserId()),
+                	User.find.byId(Secured.getUserId()),
                 	buttonSwitchForm)
         );
     }
@@ -72,8 +72,8 @@ public class ButtonSwitchs extends Controller{
         Form<ButtonSwitch> buttonSwitchForm = form(ButtonSwitch.class).bindFromRequest();
         if(buttonSwitchForm.hasErrors()) {
             return badRequest(createForm.render(
-            		Project.findInvolving(request().username()),
-                	User.findByEmail(request().username()),
+            		Project.findInvolving(Secured.getUserId()),
+                	User.find.byId(Secured.getUserId()),
                 	buttonSwitchForm));
         }
         buttonSwitchForm.get().save();

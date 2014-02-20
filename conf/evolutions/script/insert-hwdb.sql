@@ -1,32 +1,21 @@
 CREATE DATABASE  IF NOT EXISTS `orcadsystem` /*!40100 DEFAULT CHARACTER SET ascii */;
 USE `orcadsystem`;
-
+-- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (x86_64)
 --
--- Table structure for table `part_type`
---
+-- Host: localhost    Database: orcaddata
+-- ------------------------------------------------------
+-- Server version	5.5.35-0ubuntu0.13.10.1
 
-DROP TABLE IF EXISTS `part_type`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `part_type` (
-  `PREFIX` int(11) NOT NULL,
-  `PART_TYPE` varchar(255) NOT NULL,
-  `CATEGORY` varchar(255) NOT NULL,
-  `DESCRIPTION_RULE` varchar(255) DEFAULT NULL,
-  `DEVICE_RULE` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`PREFIX`)
-) ENGINE=InnoDB DEFAULT CHARSET=ascii;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `part_type`
---
-
-LOCK TABLES `part_type` WRITE;
-/*!40000 ALTER TABLE `part_type` DISABLE KEYS */;
-INSERT INTO `part_type` VALUES (200,'RES-SMD','RESISTOR','RES-SMD;value,tolerance,package,power','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(210,'RES-DIP','RESISTOR','RES-DIP;value,tolerance,package,power','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(220,'RES-VR','RESISTOR','RES-VR;value,tolerance,package,power','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(230,'RES-ARRAY','RESISTOR','RES-ARRAY;value,qty of res,package','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(240,'RES-SPECIAL','RESISTOR','RES-SPECIAL;value,tolerance,power,info','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(301,'CAP-CER,SMD','CAPACITOR','CAP-CER,SMD;value,tolerance,package,voltage,material','C<Package>_<Value><Unit>_<Voltage>_<Tolerance>'),(302,'CAP-TA,SMD','CAPACITOR','CAP-TA,SMD;value,tolerance,package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(303,'CAP-ALUM,SMD','CAPACITOR','CAP-ALUM,SMD;Value,tolerance,Package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(304,'CAP-EDL','CAPACITOR','CAP-EDL,SMD;Value,tolerance,Package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(305,'CAP-MICA,SMD','CAPACITOR','CAP-MICA,SMD;value,voltage,tolerance,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(306,'CAP-CER,DIP','CAPACITOR','CAP-CER,DIP;value,tolerance,package,voltage,material','C<Package>_<Value><Unit>_<Voltage>_<Tolerance>'),(307,'CAP-TA,DIP','CAPACITOR','CAP-TA,DIP;value,tolerance,package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(308,'CAP-ALUM,DIP','CAPACITOR','CAP-ALUM,DIP;Value,tolerance,Package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(309,'CAP-ARRAY','CAPACITOR','CAP-ARRAY;valueXqty  of  C,tolerance,package,voltage','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(310,'CAP-MICA,DIP','CAPACITOR','CAP-MICA,DIP;value,tolerance,voltage,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(311,'CAP-OXI_NIOB,SMD','CAPACITOR','CAP-OXI_NIOB,SMD;value,tolerance,voltage','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(312,'CAP-VR,SMD','CAPACITOR','CAP-VR,SMD;value,voltage,tolerance,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(313,'CAP-VR,DIP','CAPACITOR','CAP-VR,DIP;value,voltage,tolerance,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(314,'CAP-THIN_FILM,SMD','CAPACITOR','CAP-THIN_FILM,SMD;value,voltage,info','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(315,'CAP-PAS,SMD','CAPACITOR','CAP-PAS,SMD;Value,voltage,ESR,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(401,'DIODE-SWITCHING','DIODE','DIODE-SWITCHING;voltage,current,package,mfg1_part#','DIO_<Part Number>'),(402,'DIODE-RECTIFIER','DIODE','DIODE-RECTIFIER;voltage     DC,current,package,mfg1_part#','DIO_<Part Number>'),(403,'DIODE-ZENER','DIODE','DIODE-ZENER;voltage,power,package,mfg1_part#','DIO_<Part Number>'),(404,'DIODE-SCHOTTKY','DIODE','DIODE-SCHOTTKY;voltage,current,package,mfg1_part#','DIO_<Part Number>'),(405,'BRIDGE','DIODE','BRIDGE;voltage,current,package,mfg1_part#','DIO_<Part Number>'),(406,'DIODE-ARRAY','DIODE','DIODE-ARRAY;voltage,current,package,mfg1_part#','DIO_<Part Number>'),(501,'TRANS-BJT','TRANSISTOR','TRANS-BJT;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(502,'TRANS-POWER','TRANSISTOR','TRANS-POWER;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(503,'TRANS-BJT,ARRAY','TRANSISTOR','TRANS-BJT,ARRAY;NumberxType,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(504,'TRANS-DIGITAL','TRANSISTOR','TRANS-DIGITAL;type,voltage,current,package,R1/R2','<Part_Type>_<Sub type>_<Package>'),(505,'MOS-FET','TRANSISTOR','MOS-FET;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(506,'TRANS-RF','TRANSISTOR','TRANS-RF;type, Voltage - Collector Emitter Breakdown,Power-Max,Frequency,package','<Part_Type>_<Sub type>_<Package>'),(507,'JFET','TRANSISTOR','JFET;Type,Voltage Breakdown,Power ? Max,package','<Part_Type>_<Sub type>_<Package>'),(508,'RF-FET','TRANSISTOR','RF-FET;type,Frequency,Voltage ? Rated, Current Rating,package','<Part_Type>_<Sub type>_<Package>'),(509,'TRANS-BJT,ARRAY,Pre-Bias','TRANSISTOR','TRANS-BJT,ARRAY,Pre-Bias;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(510,'TRANS-BJT,Pre-Bias','TRANSISTOR','TRANS-BJT,Pre-Bias;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(511,'MOS-FET,ARRAY','TRANSISTOR','MOS-FET,ARRAY;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(600,'IC-CMOS LOGIC','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(710,'IC-MICROPROCESSOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(720,'IC-GRAPHIC CONT.','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(800,'IC-ANALOG MULTIPLEX','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(810,'IC-ANALOG SWITCH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(820,'IC-RF SWITCH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(830,'IC-LEVEL DRIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(840,'IC-MOTOR DRIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(850,'IC-RELAY DRIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(860,'IC-HALL EFFECT S/W','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(900,'IC-FLASH MEMORY','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(910,'IC-NAND FLASH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(920,'IC-MCP','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(930,'IC-MEMORY CARD','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1000,'IC-AUDIO AMP','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1001,'IC-POWER AMP','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1002,'IC-RF AMP','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1003,'IC-VOLTAGE COMP.','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1004,'IC-BACKLIGHT DRIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1005,'IC-BATTERY','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1006,'IC-DC/DC CONVERTER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1007,'IC-MULTI REG.','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1008,'IC-POSI.FIXED REG.','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1009,'IC-POWER SUPERVISOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1010,'IC-RESET','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1011,'IC-VOL. DETECTOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1012,'IC-DEMODULATOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1013,'IC-TUNER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1014,'IC-BLUETOOTH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1015,'IC-BUS TRANSCEIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1016,'IC-CODEC','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1017,'IC-CONTROLLER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1018,'IC-EXPANDER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1019,'IC-INTERFACE','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1020,'IC-LCD CONTROLLER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1021,'IC-MODEM','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1022,'IC-RECEIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1023,'IC-SWITCH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1024,'IC-TRANSCEIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1025,'IC-TRANSMITTER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1026,'IC-WIFI','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1027,'IC-SENSOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1028,'Other IC','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1100,'LED-SMD','LED','LED-SMD;Voltage,Current,package,color','LED_<Part Number>'),(1101,'LED-DIP','LED','LED-DIP;Voltage,Current,package,color','LED_<Part Number>'),(1102,'LED-MATRIX','LED','LED-MATRIX; Configuration,Size,Colour, Voltage,Internal Connection','LED_<Part Number>'),(1103,'LED-IR','LED','LED-IR;   Wavelength,Emitter/Receiver,Voltage,Current,Viewing   Angle,Package','LED_<Part Number>'),(1104,'LED-7SEG','LED','LED-7SEG;Voltage,Current,package,color','LED_<Part Number>'),(1200,'FILTER-SMD','FILTER','FILTER;Type,package,info','<Part number prefix>'),(1210,'FILTER-DIP','FILTER','FILTER;Type,package,info','<Part number prefix>'),(1300,'CRYSTAL','OSCILLATOR','CRYSTAL;Freq,Tolerance,C_load,Package','XTAL_<Freq>_<P/N prefix>'),(1301,'OSCILLATOR','OSCILLATOR','OSCILLATOR;Frequency,tolerance,voltage,package','OSC_<Freq>_<P/N prefix>'),(1400,'VARACTOR','VARACTOR','VARACTOR;Value,Voltage,Package','VR_<Capacitance>@<Voltage>@<Freq>'),(1500,'THERMISTOR','THERMISTOR','THERMISTOR;type,Value,package','RT_<Resistance>@<Temp>'),(1600,'CONN-SMD','CONNECTOR','CONN-SMD;name,package,info','CONN_<info>_<P/N prefix>'),(1700,'CONN-DIP','CONNECTOR','CONN-DIP;type,package,info','CONN_<Interface>_<P/N prefix>'),(1810,'SWITCH','SWITCH','X','SW<No of pins>_<Sub type>_<Type>'),(1820,'PUSH-BUTTON','BUTTON','X','BTN<No of pins>_<Sub type>_<Type>'),(1900,'ME-PART','ME part','X','X'),(2000,'NON-STANDARD MATERIAL','NON-STANDARD MATERIAL','X','X'),(2100,'IND-SMD','INDUCTOR','IND-SMD;Value,tolerance,package,current,DCR','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2110,'IND-DJ','INDUCTOR','IND-DJ; Inductance,Tolerance, Package','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2120,'IND-ARRAY','INDUCTOR','IND-ARRAY;Value,tolerance,package,current,DCR','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2130,'DELAY LINE','INDUCTOR','DELAY LINE;Value,tolerance,package,current,DCR','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2140,'IND-DIP','INDUCTOR','IND-DIP;Value,tolerance,package,current,DCR','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2400,'RELAY','RELAY','X','RL_<Control voltage<Unit>DC/AC'),(2500,'TRANSFORMER','TRANSFORMER','X','X'),(2700,'FUSE','FUSE','X','FUSE_<Trip current>_<Package>'),(2710,'FUSE-CLIP','FUSE','X','FUSE_<Trip current>_<Package>'),(2720,'FUSE-COVER','FUSE','X','FUSE_<Trip current>_<Package>'),(2800,'ESD','ESD','ESD;Direction,Capacitance,Work   Voltage,Package','ESD_<P/N prefix>'),(2810,'TVS-DIODE','TVS','TVS-DIODE;Direction,Power,Protect    Voltage,Package','ESD_<P/N prefix>'),(2820,'TVS-HYRIST','TVS','TVS-HYRIST;Voltage?Breakover,Current - Peak Pulse,Package','ESD_<P/N prefix>'),(2830,'TVS-VARISTOR','TVS','TVS-VARISTOR;Direction,Power,Protect    Voltage,Package','ESD_<P/N prefix>'),(2900,'FERRITE BEAD','FERRITE BEAD','FB;Value,Current,Package','FB<Package>_<Impedance>'),(3000,'MODULE','MODULE','X','X');
-/*!40000 ALTER TABLE `part_type` ENABLE KEYS */;
-UNLOCK TABLES;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `button_switch`
@@ -72,3 +61,909 @@ LOCK TABLES `button_switch` WRITE;
 INSERT INTO `button_switch` VALUES ('SWITCH',1810,'SWITCH','SWITCH;ARRAY8,VERT,TH16',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('BUTTON',1820,'PUSH-BUTTON','PUSH-BUTTON;DPDT,VERT,TH6',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `button_switch` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `cap_cer`
+--
+
+DROP TABLE IF EXISTS `cap_cer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cap_cer` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `TOLERANCE` varchar(255) DEFAULT NULL,
+  `VOLTAGE` varchar(255) DEFAULT NULL,
+  `MATERIAL` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `ALT_SYMBOLS` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cap_cer`
+--
+
+LOCK TABLES `cap_cer` WRITE;
+/*!40000 ALTER TABLE `cap_cer` DISABLE KEYS */;
+INSERT INTO `cap_cer` VALUES ('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;2200pF,10%,1210,2KV,X7R','C1210_2200pF_2KV_10%','Johanson Dielectrics Inc','202S41W222KV4E',NULL,NULL,'2200pF','1210','10%','2KV','X7R','C1210',NULL,NULL,NULL,NULL,'D:\\WORKING\\LIBRARY\\ORCAD\\VIETTEL_ORCAD_DATABASE\\ORCAD_LIB\\VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;1pF,0.1pF,0402,50V,C0G','C0402_1pF_50V_0.1pF','MURATA','GJM1555C1H1R0BB01D',NULL,NULL,'1pF','0402','0.1pF','50V','C0G','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;1.8pF,0402,50V,NP0','C0402_1.8pF_50V_0.05pF','MURATA','GJM1555C1H1R8WB01D',NULL,NULL,'1.8pF','0402','0.05pF','50V','NP0','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;22pF,5%,0402,50V,C0G','C0402_22pF_50V_5%','MURATA','GJM1555C1H220JB01D',NULL,NULL,'22pF','0402','5%','50V','C0G','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;2.7pF,0.05pF,0402,50V,C0G','C0402_2.7pF_50V_0.05pF','MURATA','GJM1555C1H2R7WB01D',NULL,NULL,'2.7pF','0402','0.05pF','50V','C0G','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;3.3pF,0.05pF,0402,50V,NP0','C0402_3.3pF_50V_0.05pF','MURATA','GJM1555C1H3R3WB01D',NULL,NULL,'3.3pF','0402','0.05pF','50V','NP0','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;47pF,5%,0402,50V,C0G','C0402_47pF_50V_5%','MURATA','GJM1555C1H470JB01D',NULL,NULL,'47pF','0402','5%','50V','C0G','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;100pF,5%,0402,50V,NP0','C0402_100pF_50V_5%','MURATA','GRM1555C1H101JA01D',NULL,NULL,'100pF','0402','5%','50V','NP0','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;150pF,5%,0402,50V,NP0','C0402_150pF_50V_5%','MURATA','GRM1555C1H151JA01D',NULL,NULL,'150pF','0402','5%','50V','NP0','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;180pF,5%,0402,50V,NP0','C0402_180pF_50V_5%','MURATA','GRM1555C1H181JA01D',NULL,NULL,'180pF','0402','5%','50V','NP0','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;220pF,5%,0402,50V,NP0','C0402_220pF_50V_5%','MURATA','GRM1555C1H221JA01D',NULL,NULL,'220pF','0402','5%','50V','NP0','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;27pF,5%,0402,50V,NP0','C0402_27pF_50V_5%','MURATA','GRM1555C1H270JA01D',NULL,NULL,'27pF','0402','5%','50V','NP0','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;39pF,5%,0402,50V,NP0','C0402_39pF_50V_5%','MURATA','GRM1555C1H390JA01D',NULL,NULL,'39pF','0402','5%','50V','NP0','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;0.01uF,10%,0402,6.3V,X5R','C0402_0.01uF_6.3V_10%','MURATA','GRM155R60J103KA01D',NULL,NULL,'0.01uF','0402','10%','6.3V','X5R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;0.22uF,10%,0402,6.3V,X5R','C0402_0.22uF_6.3V_10%','MURATA','GRM155R60J224KE01D',NULL,NULL,'0.22uF','0402','10%','6.3V','X5R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;0.082uF,10%,0402,6.3V,X5R','C0402_0.082uF_6.3V_10%','MURATA','GRM155R60J823KA01D',NULL,NULL,'0.082uF','0402','10%','6.3V','X5R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;1uF,10%,0402,10V,X5R','C0402_1uF_10V_10%','MURATA','GRM155R61A105KE15D',NULL,NULL,'1uF','0402','10%','10V','X5R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;0.1uF,10%,0402,16V,X7R','C0402_0.1uF_16V_10%','MURATA','GRM155R71C104KA88D',NULL,NULL,'0.1uF','0402','10%','16V','X7R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;0.01uF,10%,0402,25V,X7R','C0402_0.01uF_25V_10%','MURATA','GRM155R71E103KA01D',NULL,NULL,'0.01uF','0402','10%','25V','X7R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;1000pF,10%,0402,50V,X7R','C0402_1000pF_50V_10%','MURATA','GRM155R71H102KA01D',NULL,NULL,'1000pF','0402','10%','50V','X7R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;470pF,10%,0402,50V,X7R','C0402_470pF_50V_10%','MURATA','GRM155R71H471KA01D',NULL,NULL,'470pF','0402','10%','50V','X7R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;3.3nF,10%,0402,16V,X7R','C0402_3.3nF_16V_10%','MURATA','GRM15XR71C332KA86D',NULL,NULL,'3.3nF','0402','10%','16V','X7R','C0402','C0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;10uF,20%,0603,6.3V,X5R','C0603_10uF_6.3V_20%','MURATA','GRM188R60J106ME47D',NULL,NULL,'10uF','0603','20%','6.3V','X5R','C0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;2.2uF,10%,0603,6.3V,X5R','C0603_2.2uF_6.3V_10%','MURATA','GRM188R60J225KE19D',NULL,NULL,'2.2uF','0603','10%','6.3V','X5R','C0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;4.7uF,20%,0603,6.3V,X5R','C0603_4.7uF_6.3V_20%','MURATA','GRM188R60J475ME19D',NULL,NULL,'4.7uF','0603','20%','6.3V','X5R','C0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;0.33uF,10%,0603,10V,X5R','C0603_0.33uF_10V_10%','MURATA','GRM188R61A334KA61D',NULL,NULL,'0.33uF','0603','10%','10V','X5R','C0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;10uF,10%,0805,16V,X5R','C0805_10uF_16V_10%','MURATA','GRM219R61C106KA73D',NULL,NULL,'10uF','0805','10%','16V','X5R','C0805',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;10uF,20%,0805,6.3V,X5R','C0805_10uF_6.3V_20%','MURATA','GRM21BR60J106ME19L',NULL,NULL,'10uF','0805','20%','6.3V','X5R','C0805',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;22uF,20%,0805,6.3V,X5R','C0805_22uF_6.3V_20%','MURATA','GRM21BR60J226ME39L',NULL,NULL,'22uF','0805','20%','6.3V','X5R','C0805',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;10uF,10%,0805,10V,X5R','C0805_10uF_10V_10%','MURATA','GRM21BR61A106KE19L',NULL,NULL,'10uF','0805','10%','10V','X5R','C0805',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',301,'CAP-CER,SMD','CAP-CER,SMD;47uF,20%,1206,6.3V,X5R','C1206_47uF_6.3V_20%','MURATA','GRM31CR60J476ME19L',NULL,NULL,'47uF','1206','20%','6.3V','X5R','C1206',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_NPOL',NULL),('CAPACITOR',306,'CAP-CER,DIP','CAP-CER,DIP;1.0nF,10%,04,63V,X7R',NULL,NULL,'sample part',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `cap_cer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `cap_tant_alum_others`
+--
+
+DROP TABLE IF EXISTS `cap_tant_alum_others`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cap_tant_alum_others` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `TOLERANCE` varchar(255) DEFAULT NULL,
+  `VOLTAGE` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `ESR` varchar(255) DEFAULT NULL,
+  `INFORMATION` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cap_tant_alum_others`
+--
+
+LOCK TABLES `cap_tant_alum_others` WRITE;
+/*!40000 ALTER TABLE `cap_tant_alum_others` DISABLE KEYS */;
+INSERT INTO `cap_tant_alum_others` VALUES ('CAPACITOR',308,'CAP-ALUM,DIP','CAP-ALUM,DIP; 100uF,20%,5MX5MX11M,10V','CALUM_100uF_10V_20%','Panasonic','ECA-1AM101I',NULL,NULL,'100uF','5MX5MX11M','20%','10V','CP_2M5_5MX5MX11M_RADIAL',NULL,NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_POL',NULL),('CAPACITOR',308,'CAP-ALUM,DIP','CAP-ALUM,DIP; 100uF,20%,5MX5MX11M,16V','CALUM_100uF_16V_20%','Panasonic','ECA-1CM101I',NULL,NULL,'100uF','5MX5MX11M','20%','16V','CP_2M5_5MX5MX11M_RADIAL',NULL,NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CAPACITOR_POL',NULL),('CAPACITOR',303,'CAP-ALUM,SMD','CAP-ALUM,SMD;10uF,20%,3225,35V,9OHM',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',314,'CAP-THIN_FILM,SMD','CAP-THIN_FILM,SMD;0.2pF,16V,1005',NULL,NULL,'KEY10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',313,'CAP-VR,DIP','CAP-VR,DIP;1.25-2.3pF,6MM,TOPADJ,BLK',NULL,NULL,'KEY11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',312,'CAP-VR,SMD','CAP-VR,SMD;1.5-3.0pF,2.5X3.2MM',NULL,NULL,'KEY12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',309,'CAP-ARRAY','CAP-ARRAY;33pFX4,10%,2012,25V',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',304,'CAP-EDL','CAP-EDL,SMD;3.3F,DIP,2.3V,300mOHM',NULL,NULL,'KEY3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',310,'CAP-MICA,DIP','CAP-MICA,DIP;1000pF,1000V,RADIAL',NULL,NULL,'KEY4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',305,'CAP-MICA,SMD','CAP-MICA,SMD;390pF,1000V,5%,2220',NULL,NULL,'KEY5',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',311,'CAP-OXI_NIOB,SMD','CAP-OXI_NIOB;15UF,20%,10V',NULL,NULL,'KEY6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',315,'CAP-PAS,SMD','CAP-PAS,SMD;30mF,3.3V,120OHM,3.8mm Dia',NULL,NULL,'KEY7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',307,'CAP-TA,DIP','CAP-TA,DIP;22uF,20%,1608,6.3V,40MOHM',NULL,NULL,'KEY8',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('CAPACITOR',302,'CAP-TA,SMD','CAP-TA,SMD;33uF,20%,1608,4V,25MOHM',NULL,NULL,'KEY9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `cap_tant_alum_others` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `connector`
+--
+
+DROP TABLE IF EXISTS `connector`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `connector` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `PART_NUMBER_PREFIX` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `INFORMATION` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `connector`
+--
+
+LOCK TABLES `connector` WRITE;
+/*!40000 ALTER TABLE `connector` DISABLE KEYS */;
+INSERT INTO `connector` VALUES ('CONNECTOR DIP',1700,'CONN-DIP','CONN-DIP;PLUG,M,20PIN,300V,DIP',NULL,NULL,'#key1',NULL,NULL,NULL,NULL,NULL,'20PIN,300V',NULL,NULL,NULL,NULL,NULL,NULL),('CONNECTOR SMD',1600,'CONN-SMD','CONN-SMD;CONN HDMI,TYPE A,FEMALE,19PIN,R/A,2HE1519-200111','CONN_HDMI_2HE1519-200111','SINGATRON','2HE1519-200111',NULL,NULL,'2HE1519','2HE1519-200111','CONN_SM19','TYPE A,FEMALE,19PIN,R/A','CONN_SM19_2HE1519-200111_SINGATRON',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\CONN_HDMI',NULL);
+/*!40000 ALTER TABLE `connector` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `diode_led`
+--
+
+DROP TABLE IF EXISTS `diode_led`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `diode_led` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `CURRENT` varchar(255) DEFAULT NULL,
+  `RATING` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `COLOR` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `diode_led`
+--
+
+LOCK TABLES `diode_led` WRITE;
+/*!40000 ALTER TABLE `diode_led` DISABLE KEYS */;
+INSERT INTO `diode_led` VALUES ('DIODE',401,'DIODE-SWITCHING','DIODE-SWITCHING;100V,200mA,LL-34,FDLL4148',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('LED',1104,'LED-7SEG','LED-7SEG;1,0.3”, ,RED,CA,5V,20mA,10DIP',NULL,NULL,'KEY10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('DIODE',404,'DIODE-SCHOTTKY','DIODE-SCHOTTKY;30V,100mA,SOD-323,CMDSH-3TR',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('DIODE',406,'DIODE-ARRAY','DIODE-ARRAY;80V,100mA,SOT-323',NULL,NULL,'KEY3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('DIODE',402,'DIODE-RECTIFIER','DIODE-RECTIFIER;100V,100mA, DIP DO-35',NULL,NULL,'KEY4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('DIODE',405,'BRIDGE','BRIDGE;220V,1A,4-SMD',NULL,NULL,'KEY5',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('LED',1100,'LED-SMD','LED-SMD;2V,20mA,1.5X1.6X0.55MM,BLUEGREEN',NULL,NULL,'KEY6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('LED',1101,'LED-DIP','LED-DIP;2V,20mA,1.5X1.6X0.55MM,BLUEGREEN',NULL,NULL,'KEY7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('LED',1102,'LED-MATRIX','LED-MATRIX;5x7,0.7”x0.5”,3V, Common Anode Row, Common Cathode Column',NULL,NULL,'KEY8',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('LED',1103,'LED-IR','LED-IR; 940nm,Emitter,1.5V,50mA,24o,DIP',NULL,NULL,'KEY9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `diode_led` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `diode_zener`
+--
+
+DROP TABLE IF EXISTS `diode_zener`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `diode_zener` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `CURRENT` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `diode_zener`
+--
+
+LOCK TABLES `diode_zener` WRITE;
+/*!40000 ALTER TABLE `diode_zener` DISABLE KEYS */;
+INSERT INTO `diode_zener` VALUES ('DIODE',403,'DIODE-ZENER','DIODE-ZENER;5.1V,200mW,1005,CZRF52C5V1-HF',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `diode_zener` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `esd_tvs`
+--
+
+DROP TABLE IF EXISTS `esd_tvs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `esd_tvs` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `PART_NUMBER_PREFIX` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `VOLTAGE` varchar(255) DEFAULT NULL,
+  `DIRECTION` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `esd_tvs`
+--
+
+LOCK TABLES `esd_tvs` WRITE;
+/*!40000 ALTER TABLE `esd_tvs` DISABLE KEYS */;
+INSERT INTO `esd_tvs` VALUES ('ESD',2800,'ESD','ESD;UNI-DIR,2pF,3.3V/15KV,0402',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TVS',2810,'TVS-DIODE','TVS-DIODE;BI-DIR,500W,3.3V/20V,DO-15',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TVS',2820,'TVS-HYRIST','TVS-HYRIST,250V,100A,DO-214AA',NULL,NULL,'KEY3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TVS',2830,'TVS-VARISTOR','TVS-VARISTOR;5.6VDC,4VAC,0.01J,0306',NULL,NULL,'KEY4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `esd_tvs` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ferrite_bead`
+--
+
+DROP TABLE IF EXISTS `ferrite_bead`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ferrite_bead` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `CURRENT` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `DCR` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ferrite_bead`
+--
+
+LOCK TABLES `ferrite_bead` WRITE;
+/*!40000 ALTER TABLE `ferrite_bead` DISABLE KEYS */;
+INSERT INTO `ferrite_bead` VALUES ('FERRITE BEAD',2900,'FERRITE BEAD','FB;100H@100MHz,500mA,0603',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `ferrite_bead` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `filter`
+--
+
+DROP TABLE IF EXISTS `filter`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `filter` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `PART_NUMBER_PREFIX` varchar(255) DEFAULT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `TYPE` varchar(255) DEFAULT NULL,
+  `SUBTYPE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `INFORMATION` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `filter`
+--
+
+LOCK TABLES `filter` WRITE;
+/*!40000 ALTER TABLE `filter` DISABLE KEYS */;
+INSERT INTO `filter` VALUES ('FILTER',1200,'FILTER-SMD','FILTER-SMD;SAW,3.8X3.8MMX6PINS,1960MHZ',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('FILTER',1210,'FILTER-DIP','FILTER-SMD;SAW,3.8X3.8MMX6PINS,1960MHZ',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `filter` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `fuse`
+--
+
+DROP TABLE IF EXISTS `fuse`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `fuse` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `CURRENT` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `fuse`
+--
+
+LOCK TABLES `fuse` WRITE;
+/*!40000 ALTER TABLE `fuse` DISABLE KEYS */;
+INSERT INTO `fuse` VALUES ('FUSE',2700,'FUSE','FUSE;FAST,0.5A/2A,10V,1206',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('FUSE',2710,'FUSE-CLIP','FUSE-CLIP;5MM,6.3A,PC MNT,250V,10A',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `fuse` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `ic`
+--
+
+DROP TABLE IF EXISTS `ic`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ic` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `PART_NUMBER_PREFIX` varchar(255) DEFAULT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `INFORMATION` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ic`
+--
+
+LOCK TABLES `ic` WRITE;
+/*!40000 ALTER TABLE `ic` DISABLE KEYS */;
+INSERT INTO `ic` VALUES ('IC',800,' ANALOG MULTIPLEX','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1017,' CONTROLLER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1006,' DC/DC CONVERTER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1012,' DEMODULATOR','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY12',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1018,' EXPANDER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY13',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',900,' FLASH MEMORY','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY14',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',720,' GRAPHIC CONT','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',860,' HALL EFFECT S/W','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY16',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1019,' INTERFACE','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY17',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1020,' LCD CONTROLLER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY18',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',830,' LEVEL DRIVER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY19',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',810,' ANALOG SWITCH','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',920,' MCP','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY20',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',930,' MEMORY CARD','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY21',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',710,' MICROPROCESSOR','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY22',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1021,' MODEM','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY23',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',840,' MOTOR DRIVER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY24',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1007,' MULTI REG','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY25',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',910,' NAND FLASH','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY26',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1008,' POSI FIXED REG','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY27',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1001,' POWER AMP','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY28',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1009,' POWER SUPERVISOR','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY29',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1000,' AUDIO AMP','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1022,' RECEIVER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY30',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',850,' RELAY DRIVER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY31',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1010,' RESET','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY32',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1002,' RF AMP','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY33',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',820,' RF SWITCH','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY34',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1027,' SENSOR','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY35',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1023,' SWITCH','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY36',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1013,' TUNER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY37',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1024,' TRANSCEIVER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY38',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1025,' TRANSMITTER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY39',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1004,' BACKLIGHT DRIVER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1011,' VOL DETECTOR','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY40',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1003,' VOLTAGE COMP','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY41',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1026,' WIFI','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY42',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1028,'Other IC','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY43',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1005,' BATTERY','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY5',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1014,' BLUETOOTH','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1015,' BUS TRANSCEIVER','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',600,' CMOS LOGIC','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY8',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('IC',1016,' CODEC','IC;POWER AMP,SKY77344,MCM 20P 5X5MM,6.0V,-25TO+85C',NULL,NULL,'KEY9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `ic` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `inductor`
+--
+
+DROP TABLE IF EXISTS `inductor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `inductor` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `TOLERANCE` varchar(255) DEFAULT NULL,
+  `CURRENT` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `DCR` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inductor`
+--
+
+LOCK TABLES `inductor` WRITE;
+/*!40000 ALTER TABLE `inductor` DISABLE KEYS */;
+INSERT INTO `inductor` VALUES ('INDUCTOR',2100,'IND-SMD','IND-SMD;3.3uH,20%,4MX4MX1M2,2A,100mOHM',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('INDUCTOR',2140,'IND-DIP','IND-DIP;2.6uH,20%,6.8X6.8mm,2A,90mOHM',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('INDUCTOR',2110,'IND-DJ','IND-DJ;450nH,5%,TH 0.295\" L x 0.295\" W x 0.394\" H ',NULL,NULL,'KEY3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('INDUCTOR',2120,'IND-ARRAY','IND-ARRAY;4.7µH,18.8µH,TH  0.299\" L x 0.299\" W x 0.134\" H',NULL,NULL,'KEY4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('INDUCTOR',2130,'DELAY LINE','DELAY LINE;200ps,10%,1210',NULL,NULL,'KEY5',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `inductor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `me_part`
+--
+
+DROP TABLE IF EXISTS `me_part`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `me_part` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NAME` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `me_part`
+--
+
+LOCK TABLES `me_part` WRITE;
+/*!40000 ALTER TABLE `me_part` DISABLE KEYS */;
+/*!40000 ALTER TABLE `me_part` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `module`
+--
+
+DROP TABLE IF EXISTS `module`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `module` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `NAME` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `module`
+--
+
+LOCK TABLES `module` WRITE;
+/*!40000 ALTER TABLE `module` DISABLE KEYS */;
+INSERT INTO `module` VALUES ('MODULE',3000,'MODULE','HEAT SINK;40MX40MX12M\nSPEAKER;3W,20M',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `module` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `non_standard_material`
+--
+
+DROP TABLE IF EXISTS `non_standard_material`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `non_standard_material` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `non_standard_material`
+--
+
+LOCK TABLES `non_standard_material` WRITE;
+/*!40000 ALTER TABLE `non_standard_material` DISABLE KEYS */;
+/*!40000 ALTER TABLE `non_standard_material` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `oscillator_crystal`
+--
+
+DROP TABLE IF EXISTS `oscillator_crystal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `oscillator_crystal` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `PART_NUMBER_PREFIX` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `TOLERANCE` varchar(255) DEFAULT NULL,
+  `FREQUENCY` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `oscillator_crystal`
+--
+
+LOCK TABLES `oscillator_crystal` WRITE;
+/*!40000 ALTER TABLE `oscillator_crystal` DISABLE KEYS */;
+INSERT INTO `oscillator_crystal` VALUES ('OSCILLATOR, CRYSTAL',1300,'CRYSTAL','CRYSTAL,25MHZ,20PPM,18pF,HC49US',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('OSCILLATOR, CRYSTAL',1301,'OSCILLATOR','OSCILLATOR;100MHZ,50PPM,3.3V,MC146',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `oscillator_crystal` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `part_type`
+--
+
+DROP TABLE IF EXISTS `part_type`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `part_type` (
+  `PREFIX` int(11) NOT NULL,
+  `PART_TYPE` varchar(255) NOT NULL,
+  `CATEGORY` varchar(255) NOT NULL,
+  `DESCRIPTION_RULE` varchar(255) DEFAULT NULL,
+  `DEVICE_RULE` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`PREFIX`)
+) ENGINE=InnoDB DEFAULT CHARSET=ascii;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `part_type`
+--
+
+LOCK TABLES `part_type` WRITE;
+/*!40000 ALTER TABLE `part_type` DISABLE KEYS */;
+INSERT INTO `part_type` VALUES (200,'RES-SMD','RESISTOR','RES-SMD;value,tolerance,package,power','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(210,'RES-DIP','RESISTOR','RES-DIP;value,tolerance,package,power','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(220,'RES-VR','RESISTOR','RES-VR;value,tolerance,package,power','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(230,'RES-ARRAY','RESISTOR','RES-ARRAY;value,qty of res,package','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(240,'RES-SPECIAL','RESISTOR','RES-SPECIAL;value,tolerance,power,info','R<Package>_<Value><Unit>_<Power>_<Tolerance>'),(301,'CAP-CER,SMD','CAPACITOR','CAP-CER,SMD;value,tolerance,package,voltage,material','C<Package>_<Value><Unit>_<Voltage>_<Tolerance>'),(302,'CAP-TA,SMD','CAPACITOR','CAP-TA,SMD;value,tolerance,package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(303,'CAP-ALUM,SMD','CAPACITOR','CAP-ALUM,SMD;Value,tolerance,Package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(304,'CAP-EDL','CAPACITOR','CAP-EDL,SMD;Value,tolerance,Package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(305,'CAP-MICA,SMD','CAPACITOR','CAP-MICA,SMD;value,voltage,tolerance,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(306,'CAP-CER,DIP','CAPACITOR','CAP-CER,DIP;value,tolerance,package,voltage,material','C<Package>_<Value><Unit>_<Voltage>_<Tolerance>'),(307,'CAP-TA,DIP','CAPACITOR','CAP-TA,DIP;value,tolerance,package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(308,'CAP-ALUM,DIP','CAPACITOR','CAP-ALUM,DIP;Value,tolerance,Package,voltage,ESR','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(309,'CAP-ARRAY','CAPACITOR','CAP-ARRAY;valueXqty  of  C,tolerance,package,voltage','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(310,'CAP-MICA,DIP','CAPACITOR','CAP-MICA,DIP;value,tolerance,voltage,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(311,'CAP-OXI_NIOB,SMD','CAPACITOR','CAP-OXI_NIOB,SMD;value,tolerance,voltage','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(312,'CAP-VR,SMD','CAPACITOR','CAP-VR,SMD;value,voltage,tolerance,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(313,'CAP-VR,DIP','CAPACITOR','CAP-VR,DIP;value,voltage,tolerance,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(314,'CAP-THIN_FILM,SMD','CAPACITOR','CAP-THIN_FILM,SMD;value,voltage,info','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(315,'CAP-PAS,SMD','CAPACITOR','CAP-PAS,SMD;Value,voltage,ESR,package','C<Type>_<Value><Unit>_<Voltage>_<Tolerance>'),(401,'DIODE-SWITCHING','DIODE','DIODE-SWITCHING;voltage,current,package,mfg1_part#','DIO_<Part Number>'),(402,'DIODE-RECTIFIER','DIODE','DIODE-RECTIFIER;voltage     DC,current,package,mfg1_part#','DIO_<Part Number>'),(403,'DIODE-ZENER','DIODE','DIODE-ZENER;voltage,power,package,mfg1_part#','DIO_<Part Number>'),(404,'DIODE-SCHOTTKY','DIODE','DIODE-SCHOTTKY;voltage,current,package,mfg1_part#','DIO_<Part Number>'),(405,'BRIDGE','DIODE','BRIDGE;voltage,current,package,mfg1_part#','DIO_<Part Number>'),(406,'DIODE-ARRAY','DIODE','DIODE-ARRAY;voltage,current,package,mfg1_part#','DIO_<Part Number>'),(501,'TRANS-BJT','TRANSISTOR','TRANS-BJT;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(502,'TRANS-POWER','TRANSISTOR','TRANS-POWER;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(503,'TRANS-BJT,ARRAY','TRANSISTOR','TRANS-BJT,ARRAY;NumberxType,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(504,'TRANS-DIGITAL','TRANSISTOR','TRANS-DIGITAL;type,voltage,current,package,R1/R2','<Part_Type>_<Sub type>_<Package>'),(505,'MOS-FET','TRANSISTOR','MOS-FET;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(506,'TRANS-RF','TRANSISTOR','TRANS-RF;type, Voltage - Collector Emitter Breakdown,Power-Max,Frequency,package','<Part_Type>_<Sub type>_<Package>'),(507,'JFET','TRANSISTOR','JFET;Type,Voltage Breakdown,Power ? Max,package','<Part_Type>_<Sub type>_<Package>'),(508,'RF-FET','TRANSISTOR','RF-FET;type,Frequency,Voltage ? Rated, Current Rating,package','<Part_Type>_<Sub type>_<Package>'),(509,'TRANS-BJT,ARRAY,Pre-Bias','TRANSISTOR','TRANS-BJT,ARRAY,Pre-Bias;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(510,'TRANS-BJT,Pre-Bias','TRANSISTOR','TRANS-BJT,Pre-Bias;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(511,'MOS-FET,ARRAY','TRANSISTOR','MOS-FET,ARRAY;type,voltage,current,package','<Part_Type>_<Sub type>_<Package>'),(600,'IC-CMOS LOGIC','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(710,'IC-MICROPROCESSOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(720,'IC-GRAPHIC CONT.','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(800,'IC-ANALOG MULTIPLEX','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(810,'IC-ANALOG SWITCH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(820,'IC-RF SWITCH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(830,'IC-LEVEL DRIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(840,'IC-MOTOR DRIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(850,'IC-RELAY DRIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(860,'IC-HALL EFFECT S/W','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(900,'IC-FLASH MEMORY','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(910,'IC-NAND FLASH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(920,'IC-MCP','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(930,'IC-MEMORY CARD','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1000,'IC-AUDIO AMP','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1001,'IC-POWER AMP','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1002,'IC-RF AMP','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1003,'IC-VOLTAGE COMP.','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1004,'IC-BACKLIGHT DRIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1005,'IC-BATTERY','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1006,'IC-DC/DC CONVERTER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1007,'IC-MULTI REG.','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1008,'IC-POSI.FIXED REG.','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1009,'IC-POWER SUPERVISOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1010,'IC-RESET','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1011,'IC-VOL. DETECTOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1012,'IC-DEMODULATOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1013,'IC-TUNER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1014,'IC-BLUETOOTH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1015,'IC-BUS TRANSCEIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1016,'IC-CODEC','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1017,'IC-CONTROLLER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1018,'IC-EXPANDER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1019,'IC-INTERFACE','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1020,'IC-LCD CONTROLLER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1021,'IC-MODEM','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1022,'IC-RECEIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1023,'IC-SWITCH','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1024,'IC-TRANSCEIVER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1025,'IC-TRANSMITTER','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1026,'IC-WIFI','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1027,'IC-SENSOR','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1028,'Other IC','IC','IC;Function,Value,Package,Info','IC_<Part number prefix>'),(1100,'LED-SMD','LED','LED-SMD;Voltage,Current,package,color','LED_<Part Number>'),(1101,'LED-DIP','LED','LED-DIP;Voltage,Current,package,color','LED_<Part Number>'),(1102,'LED-MATRIX','LED','LED-MATRIX; Configuration,Size,Colour, Voltage,Internal Connection','LED_<Part Number>'),(1103,'LED-IR','LED','LED-IR;   Wavelength,Emitter/Receiver,Voltage,Current,Viewing   Angle,Package','LED_<Part Number>'),(1104,'LED-7SEG','LED','LED-7SEG;Voltage,Current,package,color','LED_<Part Number>'),(1200,'FILTER-SMD','FILTER','FILTER;Type,package,info','<Part number prefix>'),(1210,'FILTER-DIP','FILTER','FILTER;Type,package,info','<Part number prefix>'),(1300,'CRYSTAL','OSCILLATOR','CRYSTAL;Freq,Tolerance,C_load,Package','XTAL_<Freq>_<P/N prefix>'),(1301,'OSCILLATOR','OSCILLATOR','OSCILLATOR;Frequency,tolerance,voltage,package','OSC_<Freq>_<P/N prefix>'),(1400,'VARACTOR','VARACTOR','VARACTOR;Value,Voltage,Package','VR_<Capacitance>@<Voltage>@<Freq>'),(1500,'THERMISTOR','THERMISTOR','THERMISTOR;type,Value,package','RT_<Resistance>@<Temp>'),(1600,'CONN-SMD','CONNECTOR','CONN-SMD;name,package,info','CONN_<info>_<P/N prefix>'),(1700,'CONN-DIP','CONNECTOR','CONN-DIP;type,package,info','CONN_<Interface>_<P/N prefix>'),(1810,'SWITCH','SWITCH','X','SW<No of pins>_<Sub type>_<Type>'),(1820,'PUSH-BUTTON','BUTTON','X','BTN<No of pins>_<Sub type>_<Type>'),(1900,'ME-PART','ME part','X','X'),(2000,'NON-STANDARD MATERIAL','NON-STANDARD MATERIAL','X','X'),(2100,'IND-SMD','INDUCTOR','IND-SMD;Value,tolerance,package,current,DCR','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2110,'IND-DJ','INDUCTOR','IND-DJ; Inductance,Tolerance, Package','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2120,'IND-ARRAY','INDUCTOR','IND-ARRAY;Value,tolerance,package,current,DCR','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2130,'DELAY LINE','INDUCTOR','DELAY LINE;Value,tolerance,package,current,DCR','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2140,'IND-DIP','INDUCTOR','IND-DIP;Value,tolerance,package,current,DCR','L<Package>_<Value><Unit>_<Current>_<Tolerance>'),(2400,'RELAY','RELAY','X','RL_<Control voltage<Unit>DC/AC'),(2500,'TRANSFORMER','TRANSFORMER','X','X'),(2700,'FUSE','FUSE','X','FUSE_<Trip current>_<Package>'),(2710,'FUSE-CLIP','FUSE','X','FUSE_<Trip current>_<Package>'),(2720,'FUSE-COVER','FUSE','X','FUSE_<Trip current>_<Package>'),(2800,'ESD','ESD','ESD;Direction,Capacitance,Work   Voltage,Package','ESD_<P/N prefix>'),(2810,'TVS-DIODE','TVS','TVS-DIODE;Direction,Power,Protect    Voltage,Package','ESD_<P/N prefix>'),(2820,'TVS-HYRIST','TVS','TVS-HYRIST;Voltage?Breakover,Current - Peak Pulse,Package','ESD_<P/N prefix>'),(2830,'TVS-VARISTOR','TVS','TVS-VARISTOR;Direction,Power,Protect    Voltage,Package','ESD_<P/N prefix>'),(2900,'FERRITE BEAD','FERRITE BEAD','FB;Value,Current,Package','FB<Package>_<Impedance>'),(3000,'MODULE','MODULE','X','X');
+/*!40000 ALTER TABLE `part_type` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `relay`
+--
+
+DROP TABLE IF EXISTS `relay`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `relay` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `VOLTAGE` varchar(255) DEFAULT NULL,
+  `CURRENT` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `relay`
+--
+
+LOCK TABLES `relay` WRITE;
+/*!40000 ALTER TABLE `relay` DISABLE KEYS */;
+INSERT INTO `relay` VALUES ('RELAY',2400,'RELAY','RELAY;RSBL-12-S,12V DC,18.7VDC,33.3mA,360OHM,400mW',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `relay` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `resistor`
+--
+
+DROP TABLE IF EXISTS `resistor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `resistor` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `TOLERANCE` double DEFAULT NULL,
+  `POWER` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `ALT_SYMBOLS` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `resistor`
+--
+
+LOCK TABLES `resistor` WRITE;
+/*!40000 ALTER TABLE `resistor` DISABLE KEYS */;
+INSERT INTO `resistor` VALUES ('RESISTOR',200,'RES-SMD','RES-SMD;0OHM,5%,0402,1/10W','R0402_0_1/10W_5%','Panasonic - ECG','ERJ-2GE0R00X',NULL,NULL,'0','0402',0.05,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;1KOHM,5%,0402,1/10W','R0402_1K_1/10W_5%','Panasonic - ECG','ERJ-2GEJ102X',NULL,NULL,'1K','0402',0.05,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;10KOHM,5%,0402,1/10W','R0402_10K_1/10W_5%','Panasonic - ECG','ERJ-2GEJ103X',NULL,NULL,'10K','0402',0.05,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;22OHM,5%,0402,1/10W','R0402_22_1/10W_5%','Panasonic - ECG','ERJ-2GEJ220X',NULL,NULL,'22','0402',0.05,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;27KOHM,5%,0402,1/10W','R0402_27K_1/10W_5%','Panasonic - ECG','ERJ-2GEJ273X',NULL,NULL,'27K','0402',0.05,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;4.7KOHM,5%,0402,1/10W','R0402_4.7K_1/10W_5%','Panasonic - ECG','ERJ-2GEJ472X',NULL,NULL,'4.7K','0402',0.05,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;100OHM,1%,0402,1/10W','R0402_100_1/10W_1%','Panasonic - ECG','ERJ-2RKF1000X',NULL,NULL,'100','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;10KOHM,1%,0402,1/16W','R0402_10K_1/10W_1%','Panasonic - ECG','ERJ-2RKF1002X',NULL,NULL,'10K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;1.5KOHM,1%,0402,1/10W','R0402_1.5K_1/10W_1%','Panasonic - ECG','ERJ-2RKF1501X',NULL,NULL,'1.5K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;15KOHM,1%,0402,1/10W','R0402_15K_1/10W_1%','Panasonic - ECG','ERJ-2RKF1502X',NULL,NULL,'15K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;180OHM,1%,0402,1/10W','R0402_180_1/10W_1%','Panasonic - ECG','ERJ-2RKF1800X',NULL,NULL,'180','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;2KOHM,1%,0402,1/10W','R0402_2K_1/10W_1%','Panasonic - ECG','ERJ-2RKF2001X',NULL,NULL,'2K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;220OHM,1%,0402,1/10W','R0402_220_1/10W_1%','Panasonic - ECG','ERJ-2RKF2200X',NULL,NULL,'220','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;221OHM,1%,0402,1/10W','R0402_221_1/10W_1%','Panasonic - ECG','ERJ-2RKF2210X',NULL,NULL,'221','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;240OHM,1%,0402,1/10W','R0402_240_1/10W_1%','Panasonic - ECG','ERJ-2RKF2400X',NULL,NULL,'240','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;249OHM,1%,0402,1/10W','R0402_249R_1/10W_1%','Panasonic - ECG','ERJ-2RKF2490X',NULL,NULL,'249','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;30.1OHM,1%,0402,1/10W','R0402_30.1_1/10W_1%','Panasonic - ECG','ERJ-2RKF30R1X',NULL,NULL,'30.1','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;330OHM,1%,0402,1/10W','R0402_330_1/10W_1%','Panasonic - ECG','ERJ-2RKF3300X',NULL,NULL,'330','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;33.0OHM,1%,0402,1/10W','R0402_33_1/10W_1%','Panasonic - ECG','ERJ-2RKF33R0X',NULL,NULL,'33','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;34KOHM,1%,0402,1/10W','R0402_34K_1/10W_1%','Panasonic - ECG','ERJ-2RKF3402X',NULL,NULL,'34K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;4.32KOHM,1%,0402,1/10W','R0402_4.32K_1/10W_1%','Panasonic - ECG','ERJ-2RKF4321X',NULL,NULL,'4.32K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;47KOHM,1%,0402,1/10W','R0402_47K_1/10W_1%','Panasonic - ECG','ERJ-2RKF4702X',NULL,NULL,'47K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;51KOHM,1%,0402,1/10W','R0402_51K_1/10W_1%','Panasonic - ECG','ERJ-2RKF5102X',NULL,NULL,'51K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;51OHM,1%,0402,1/10W','R0402_51_1/10W_1%','Panasonic - ECG','ERJ-2RKF51R0X',NULL,NULL,'51','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;562OHM,1%,0402,1/10W','R0402_562_1/10W_1%','Panasonic - ECG','ERJ-2RKF5620X',NULL,NULL,'562','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;56OHM,1%,0402,1/10W','R0402_56_1/10W_1%','Panasonic - ECG','ERJ-2RKF56R0X',NULL,NULL,'56','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;6.04KOHM,1%,0402,1/10W','R0402_6.04K_1/10W_1%','Panasonic - ECG','ERJ-2RKF6041X',NULL,NULL,'6.04K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;75OHM,1%,0402,1/10W','R0402_75_1/10W_1%','Panasonic - ECG','ERJ-2RKF75R0X',NULL,NULL,'75','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;8.25KOHM,1%,0402,1/10W','R0402_8.25K_1/10W_1%','Panasonic - ECG','ERJ-2RKF8251X',NULL,NULL,'8.25K','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;82OHM,1%,0402,1/10W','R0402_82_1/10W_1%','Panasonic - ECG','ERJ-2RKF82R0X',NULL,NULL,'82','0402',0.01,'1/10W','R0402','R0402_ALT',NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;10KOHM,1%,0603,1/10W','R0603_10K_1/10W_1%','Panasonic - ECG','ERJ-3EKF1002V',NULL,NULL,'10K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;130KOHM,1%,0603,1/10W','R0603_130K_1/10W_1%','Panasonic - ECG','ERJ-3EKF1303V',NULL,NULL,'130K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;133KOHM,1%,0603,1/10W','R0603_133K_1/10W_1%','Panasonic - ECG','ERJ-3EKF1333V',NULL,NULL,'133K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;15KOHM,1%,0603,1/10W','R0603_15K_1/10W_1%','Panasonic - ECG','ERJ-3EKF1502V',NULL,NULL,'15K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;160KOHM,1%,0603,1/10W','R0603_160K_1/10W_1%','Panasonic - ECG','ERJ-3EKF1603V',NULL,NULL,'160K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;174KOHM,1%,0603,1/10W','R0603_174K_1/10W_1%','Panasonic - ECG','ERJ-3EKF1743V',NULL,NULL,'174K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;18OHM,1%,0603,1/10W','R0603_18_1/10W_1%','Panasonic - ECG','ERJ-3EKF18R0V',NULL,NULL,'18','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;200KOHM,1%,0603,1/10W','R0603_200K_1/10W_1%','Panasonic - ECG','ERJ-3EKF2003V',NULL,NULL,'200K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;249KOHM,1%,0603,1/10W','R0603_249K_1/10W_1%','Panasonic - ECG','ERJ-3EKF2493V',NULL,NULL,'249K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;39KOHM,1%,0603,1/10W','R0603_39K_1/10W_1%','Panasonic - ECG','ERJ-3EKF3902V',NULL,NULL,'39K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;39.2KOHM,1%,0603,1/10W','R0603_39.2K_1/10W_1%','Panasonic - ECG','ERJ-3EKF3922V',NULL,NULL,'39.2K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;40.2KOHM,1%,0603,1/10W','R0603_40.2K_1/10W_1%','Panasonic - ECG','ERJ-3EKF4022V',NULL,NULL,'40.2K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;43.2KOHM,1%,0603,1/10W','R0603_43.2K_1/10W_1%','Panasonic - ECG','ERJ-3EKF4322V',NULL,NULL,'43.2K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;44.2KOHM,1%,0603,1/10W','R0603_44.2K_1/10W_1%','Panasonic - ECG','ERJ-3EKF4422V',NULL,NULL,'44.2K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;680kOHM,1%,0603,1/10W','R0805_680k_1/10W_1%','Panasonic - ECG','ERJ-3EKF6803V',NULL,NULL,'680K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;91KOHM,1%,0603,1/10W','R0603_91K_1/10W_1%','Panasonic - ECG','ERJ-3EKF9102V',NULL,NULL,'91K','0603',0.01,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;0OHM,5%,0603,1/10W','R0603_0_1/10W_5%','Panasonic - ECG','ERJ-3GEY0R00V',NULL,NULL,'0','0603',0.05,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;100KOHM,5%,0603,1/10W','R0603_100K_1/10W_5%','Panasonic - ECG','ERJ-3GEYJ104V',NULL,NULL,'100K','0603',0.05,'1/10W','R0603',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',200,'RES-SMD','RES-SMD;0OHM,5%,0805,1/8W','R0805_0_1/8W_5%','Panasonic - ECG','ERJ-6GEY0R00V',NULL,NULL,'0','0805',0.05,'1/8W','R0805',NULL,NULL,NULL,NULL,'VIETTEL_ORCAD_SYMBOL_LIBRARY\\RESISTOR',NULL),('RESISTOR',230,'RES-ARRAY','RES-ARRAY;100OHM,4 RES,8-SIP',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('RESISTOR',220,'RES-VR','RES-VR;20KOHM,5%,3296,1/8W',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('RESISTOR',210,'RES-DIP','RES-DIP;5.1OHM,5%,RJ14,1/8W',NULL,NULL,'KEY3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('RESISTOR',240,'RES-SPECIAL','RES-SPECIAL;2.5KOHM,5%,10W,CAP MNT',NULL,NULL,'KEY4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `resistor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `thermistor`
+--
+
+DROP TABLE IF EXISTS `thermistor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `thermistor` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `TYPE` varchar(255) DEFAULT NULL,
+  `SUBTYPE` varchar(255) DEFAULT NULL,
+  `FUNCTION` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `thermistor`
+--
+
+LOCK TABLES `thermistor` WRITE;
+/*!40000 ALTER TABLE `thermistor` DISABLE KEYS */;
+INSERT INTO `thermistor` VALUES ('THERMISTOR',2000,'THERMISTOR','THERMISTOR;PTC,470OHM @ 95°C,0603','','','KEY1','','','',NULL,NULL,NULL,'','','','',NULL,'',NULL);
+/*!40000 ALTER TABLE `thermistor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transformer`
+--
+
+DROP TABLE IF EXISTS `transformer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transformer` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `TOLERANCE` varchar(255) DEFAULT NULL,
+  `CURRENT` varchar(255) DEFAULT NULL,
+  `FREQUENCY` varchar(255) DEFAULT NULL,
+  `RATIO` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `DCR` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transformer`
+--
+
+LOCK TABLES `transformer` WRITE;
+/*!40000 ALTER TABLE `transformer` DISABLE KEYS */;
+INSERT INTO `transformer` VALUES ('TRANSFORMER',2500,'TRANSFORMER','TRANSFORMER;LPE3225-A190,10uH,20%,100KHZ,0.3A,1:12',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `transformer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `transistor`
+--
+
+DROP TABLE IF EXISTS `transistor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `transistor` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `TYPE` varchar(255) DEFAULT NULL,
+  `SUBTYPE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `VOLTAGE` varchar(255) DEFAULT NULL,
+  `CURRENT` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `transistor`
+--
+
+LOCK TABLES `transistor` WRITE;
+/*!40000 ALTER TABLE `transistor` DISABLE KEYS */;
+INSERT INTO `transistor` VALUES ('TRANSISTOR',501,'TRANS-BJT','TRANS-BJT;PNP,20V,7.0A,WDFN3',NULL,NULL,'KEY1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',510,'TRANS-BJT,Pre-Bias','TRANS-BJT,Pre-Bias;PNP,40V,200mA,TO-92',NULL,NULL,'KEY10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',511,'MOS-FET,ARRAY','MOS-FET,ARRAY;2xN,25V,60A,SC70-6',NULL,NULL,'KEY11',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',502,'TRANS-POWER','TRANS-POWER;PNP,20V,7.0A,WDFN3',NULL,NULL,'KEY2',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',504,'TRANS-DIGITAL','TRANS-DIGITAL;PNP,-50V,-100mA,SOT-723,0.8/1.2KOHM',NULL,NULL,'KEY3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',505,'MOS-FET','MOS-FET;N-Channel,25V,60A,SOIC8',NULL,NULL,'KEY4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',503,'TRANS-BJT,ARRAY','TRANS-BJT,ARRAY;2PNP, 40V, 200mA,16',NULL,NULL,'KEY5',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',506,'TRANS-RF','TRANS-RF;NPN,25V,350MW,650MHz,SOT-23',NULL,NULL,'KEY6',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',507,'JFET','JFET;N-Channel,40V,350mW,SOT-23',NULL,NULL,'KEY7',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',508,'RF-FET','RF-FET;N-Channel JFET,450MHz,25V,60mA,TO-92',NULL,NULL,'KEY8',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('TRANSISTOR',509,'TRANS-BJT,ARRAY,Pre-Bias','TRANS-BJT,ARRAY,Pre-Bias;2PNP,40V,200mA,16-SOIC ',NULL,NULL,'KEY9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `transistor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `varactor`
+--
+
+DROP TABLE IF EXISTS `varactor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `varactor` (
+  `CATEGORY` varchar(255) DEFAULT NULL,
+  `PREFIX` int(11) DEFAULT NULL,
+  `PART_TYPE` varchar(255) DEFAULT NULL,
+  `DESCRIPTION` varchar(255) DEFAULT NULL,
+  `DEVICE` varchar(255) DEFAULT NULL,
+  `MFG1` varchar(255) DEFAULT NULL,
+  `MFG1_PART` varchar(255) NOT NULL,
+  `DISTR1` varchar(255) DEFAULT NULL,
+  `DISTR1_PART` varchar(255) DEFAULT NULL,
+  `VALUE` varchar(255) DEFAULT NULL,
+  `PACKAGE` varchar(255) DEFAULT NULL,
+  `PCB_FOOTPRINT` varchar(255) DEFAULT NULL,
+  `NI_MARK` varchar(255) DEFAULT NULL,
+  `ACCOUNT_ID` varchar(255) DEFAULT NULL,
+  `MODIFIED_DATE` datetime DEFAULT NULL,
+  `SCHEMATIC_PART` varchar(255) DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  PRIMARY KEY (`MFG1_PART`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `varactor`
+--
+
+LOCK TABLES `varactor` WRITE;
+/*!40000 ALTER TABLE `varactor` DISABLE KEYS */;
+INSERT INTO `varactor` VALUES ('VARACTOR',1900,'VARACTOR','VARACTOR;2pF@6V@50MHZ, 15V,2.04,SOD323','','','KEY1','','','','','','','',NULL,'',NULL);
+/*!40000 ALTER TABLE `varactor` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2014-02-19  9:27:19

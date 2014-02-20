@@ -40,8 +40,8 @@ public class ComputerDB extends Controller{
     public static Result list(int page, String sortBy, String order, String filter) {
         return ok(
             list.render(
-            	Project.findInvolving(request().username()),
-            	User.findByEmail(request().username()),
+            	Project.findInvolving(Secured.getUserId()),
+            	User.find.byId(Secured.getUserId()),
                 Computer.page(page, 10, sortBy, order, filter),
                 sortBy, order, filter
             )
@@ -59,8 +59,8 @@ public class ComputerDB extends Controller{
         );
         return ok(
             editForm.render(
-            		Project.findInvolving(request().username()),
-                	User.findByEmail(request().username()),
+            		Project.findInvolving(Secured.getUserId()),
+                	User.find.byId(Secured.getUserId()),
             		id, 
             		computerForm)
         );
@@ -75,8 +75,8 @@ public class ComputerDB extends Controller{
         Form<Computer> computerForm = form(Computer.class).bindFromRequest();
         if(computerForm.hasErrors()) {
             return badRequest(editForm.render(
-            		Project.findInvolving(request().username()),
-                	User.findByEmail(request().username()),
+            		Project.findInvolving(Secured.getUserId()),
+                	User.find.byId(Secured.getUserId()),
             		id, 
             		computerForm));
         }
@@ -92,8 +92,8 @@ public class ComputerDB extends Controller{
         Form<Computer> computerForm = form(Computer.class);
         return ok(
             createForm.render(
-            		Project.findInvolving(request().username()),
-                	User.findByEmail(request().username()),
+            		Project.findInvolving(Secured.getUserId()),
+                	User.find.byId(Secured.getUserId()),
                 	computerForm)
         );
     }
@@ -105,8 +105,8 @@ public class ComputerDB extends Controller{
         Form<Computer> computerForm = form(Computer.class).bindFromRequest();
         if(computerForm.hasErrors()) {
             return badRequest(createForm.render(
-            		Project.findInvolving(request().username()),
-                	User.findByEmail(request().username()),
+            		Project.findInvolving(Secured.getUserId()),
+                	User.find.byId(Secured.getUserId()),
                 	computerForm));
         }
         computerForm.get().save();

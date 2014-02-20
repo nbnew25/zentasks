@@ -12,26 +12,22 @@ import play.db.ebean.Model;
  * User entity managed by Ebean
  */
 @Entity 
-@Table(name="account", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Table(name="account")
 public class User extends Model {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "id")
     public Long id;
 	
 	//@Column(unique=true)
-    //@Formats.NonEmpty
+    @Formats.NonEmpty
     @Constraints.Required
-    @Column(name = "email")
     public String email;
     
-    @Column(name = "name")
     @Constraints.Required
     public String name;
     
-    @Column(name = "password")
     @Constraints.Required
     public String password;
     

@@ -5,14 +5,14 @@ users:
 
     - !!models.User
         id:         1
-        email:      tannb@viettel.com.vn
-        name:       Nguyen Ba Tan
-        password:   123456
-    
-    - !!models.User
-        id:         2
         email:      admin@viettel.com.vn
         name:       Admin
+        password:   123456
+        
+    - !!models.User
+        id:         2
+        email:      tannb@viettel.com.vn
+        name:       Nguyen Ba Tan
         password:   123456
     
     - !!models.User
@@ -37,13 +37,13 @@ projects:
         folder:     Hardware Database
         members:
             - !!models.User
-                email: admin@viettel.com.vn
+                id: 1
             - !!models.User
-                email: tannb@viettel.com.vn
+                id: 2
             - !!models.User
-                email: tinmt@viettel.com.vn
+                id: 3
             - !!models.User
-                email: datnt41@viettel.com.vn
+                id: 4
 
     - !!models.Project
         id:         2
@@ -51,7 +51,7 @@ projects:
         folder:     Hardware Database
         members:
             - !!models.User
-                email: admin@viettel.com.vn
+                id: 1
                             
     - !!models.Project
         id:         3
@@ -59,7 +59,7 @@ projects:
         folder:     Hardware Database
         members:
             - !!models.User
-                email: admin@viettel.com.vn
+                id: 1
                 
 # Task
 
@@ -72,7 +72,7 @@ tasks:
         project:    !!models.Project
                         id: 1
         assignedTo: !!models.User
-                        email: admin@viettel.com.vn
+                        id: 1
 
     - !!models.Task
         title:      CAP_CER
@@ -89,7 +89,7 @@ tasks:
         project:    !!models.Project
                         id: 1
         assignedTo: !!models.User
-                        email: admin@viettel.com.vn  
+                        id: 1  
 
     - !!models.Task
         title:      CONNECTOR

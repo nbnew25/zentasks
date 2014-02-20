@@ -17,19 +17,27 @@ public class Secured extends Security.Authenticator {
         return redirect(routes.Application.login());
     }
     
+    public static Long getUserId() {
+    	String userId = Context.current().session().get("userId");
+    	if(userId==null)
+    	{
+    		return 0L;
+    	}
+    	return Long.parseLong(userId);
+    }
     // Access rights
     
     public static boolean isMemberOf(Long project) {
         return Project.isMember(
             project,
-            Context.current().request().username()
+            Secured.getUserId()
         );
     }
     
     public static boolean isOwnerOf(Long task) {
         return Task.isOwner(
             task,
-            Context.current().request().username()
+            Secured.getUserId()
         );
     }
     
